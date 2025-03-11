@@ -96,18 +96,16 @@ else:
     ax.grid(True)
     st.pyplot(fig)
 
-    df_analysis = utils.processing(df_analysis)
+    filtered_df = utils.processing(filtered_df)
 
     # Plot Clustering 1
     st.subheader('Distribusi Kategori AQI PM2.5')
 
-    cat_count = df_analysis['AQI_Category'].value_counts()[['Good','Moderate','Unhealthy for SG', 'Unhealthy', 'Very Unhealthy', 'Hazardous']]
-
-    print(cat_count)
+    cat_count = filtered_df['AQI_Category'].value_counts()[['Good','Moderate','Unhealthy for SG', 'Unhealthy', 'Very Unhealthy', 'Hazardous']]
 
     fig, ax = plt.subplots(figsize=(15,10))
 
-    sns.countplot(x='AQI_Category', data=df_analysis)
+    sns.countplot(x='AQI_Category', data=filtered_df)
     ax.plot(cat_count, marker='o', color='red')
     ax.set_xlabel('Kategori AQI Index')
     ax.set_ylabel('Jumlah')
@@ -118,7 +116,7 @@ else:
     st.subheader('PM2.5 Berdasarkan Waktu dan Kategori AQI')
 
     fig, ax = plt.subplots(figsize=(15,10))
-    sns.scatterplot(x=df_analysis.index, y='PM2.5', hue='AQI_Category', data=df_analysis,
+    sns.scatterplot(x=filtered_df.index, y='PM2.5', hue='AQI_Category', data=filtered_df,
                     palette='viridis')
     ax.set_xlabel('Waktu')
     ax.set_ylabel('Konsentrasi PM2.5')
