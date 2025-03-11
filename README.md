@@ -23,8 +23,8 @@
 
 Jika Anda mengambil kode dari GitHub, gunakan:
 ```bash
-git clone https://github.com/username/repo-name.git
-cd repo-name
+git clone https://github.com/rioooranteai/Project-Analisis-Data-Dicoding.git
+cd Project-Analisis-Data-Dicoding
 ```
 Jika tidak menggunakan Git, pastikan Anda menempatkan seluruh file proyek (termasuk `dashboard.py`, `requirements.txt`, dan data CSV) di satu folder yang sama.
 
@@ -72,7 +72,3 @@ streamlit run dashboard.py
 
 Perintah ini akan memulai *server* lokal Streamlit dan membuka tab baru di peramban (biasanya di http://localhost:8501).
 
-### 5. Mengakses Dashboard
-
-- Buka peramban dan akses URL yang ditampilkan di terminal (contoh: `http://localhost:8501`).
-- Dashboard akan menampilkan visualisasi dan analisis data polusi udara sesuai dengan *script* `dashboard.py`.
