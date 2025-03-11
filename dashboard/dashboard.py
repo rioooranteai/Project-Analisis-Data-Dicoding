@@ -10,7 +10,7 @@ st.title('Dashboard Analisis Polusi Udara PM2.5 dan PM10 di Distrik Changping')
 st.sidebar.header('Filter Data')
 
 def load_data():
-    df = pd.read_csv('df_analysis.csv', index_col='Date')
+    df = pd.read_csv('dashboard/df_analysis.csv', index_col='Date')
     df.index = pd.to_datetime(df.index)
     df.sort_index(inplace=True)
 
